@@ -93,6 +93,11 @@ img {
   letter-spacing: 0px;
   color: #fff;
 }
+@media (max-width: 600px) {
+  .brand {
+      font-size: 13px;
+  }
+}
 
 .header {
   position: fixed;
