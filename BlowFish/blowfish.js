@@ -926,3 +926,50 @@ Blowfish.sBox3 = [
   0x01c36ae4, 0xd6ebe1f9, 0x90d4f869, 0xa65cdea0, 0x3f09252d, 0xc208e69f,
   0xb74e6132, 0xce77e25b, 0x578fdfe3, 0x3ac372e6
 ];
+$(function() {
+  $('input[name=encrypt]').submit(function(event) {
+    event.preventDefault();
+  });
+
+  $('input[name=encrypt]').click(function(event) {
+    try {
+      var key = $('input[name=password]').val();
+      var text = $('textarea[name=text]').val();
+
+      var bf = new Blowfish(key);
+
+      var res = bf.encrypt(text);
+
+
+      res = bf.base64Encode(res);
+      $('textarea[name=result]').val(res);
+    } catch(ex) {
+      if (window.console && console.log) {
+        console.log(ex)
+      }
+    }
+
+    return false;
+  });
+  $('input[name=decrypt]').click(function() {
+    try {
+      var key = $('input[name=password]').val();
+      var text = $('textarea[name=text]').val();
+
+      var bf = new Blowfish(key);
+
+      text = bf.base64Decode(text);
+
+      var res = bf.decrypt(text);
+      res = bf.trimZeros(res);
+
+      $('textarea[name=result]').val(res);
+    } catch(ex) {
+      if (window.console && console.log) {
+        console.log(ex)
+      }
+    }
+
+    return false;
+  });
+});
