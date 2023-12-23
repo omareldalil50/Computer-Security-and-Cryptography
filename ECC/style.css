@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#holder {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Responsive Input Fields */
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Responsive Button */
+#run {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Responsive Layout for Inputs and Button */
+@media only screen and (min-width: 600px) {
+    input, #run {
+        width: 48%;
+        margin: 10px;
+    }
+
+    #run {
+        width: calc(48% - 20px);
+    }
+}
+
+/* Responsive Grid for Smaller Screens */
+@media only screen and (max-width: 600px) {
+    #holder {
+        width: 90%;
+    }
+
+    input, #run {
+        width: 100%;
+    }
+}

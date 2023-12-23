@@ -1,0 +1,47 @@
+#mainHeader {
+  background-color: #5E77C1;
+  color: #FFF;
+  display: flex;
+  flex-direction: column; /* Stack items vertically on small screens */
+  align-items: center;
+}
+
+#mainHeader form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  margin-top: 10px;
+}
+
+#mainHeader form .inputSection {
+  display: flex;
+  flex-direction: column; /* Stack input elements vertically */
+  margin-left: 0; /* Remove left margin */
+}
+
+#mainHeader form .inputSection input[type="text"] {
+  width: 100%; /* Make the text input full width */
+}
+
+#mainHeader form .inputSection .inputs {
+  margin-left: 0; /* Remove left margin */
+}
+
+#mainHeader form .buttonWrapper {
+  margin-left: 0; /* Remove left margin */
+  margin-top: 10px;
+}
+
+#mainHeader form .buttonWrapper > button:last-child {
+  margin-left: 0; /* Remove left margin */
+}
+
+/* Add a media query for screens with a maximum width of 768 pixels (tablets) */
+@media only screen and (max-width: 768px) {
+  #mainHeader form .inputSection {
+      flex-direction: row; /* Display inputs side by side */
+  }
+
+  #mainHeader form .buttonWrapper {
+      margin-top: 10px;
+  }
+}
